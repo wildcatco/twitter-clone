@@ -4,12 +4,14 @@ import Feed from "../components/feed";
 import Sidebar from "../components/sidebar";
 import Widgets from "../components/widgets";
 import { Article } from "../types/article";
+import { User } from "../types/user";
 
 interface Props {
   articles: Article[];
+  randomUsers: User[];
 }
 
-const Home: React.FC<Props> = ({ articles }) => {
+const Home: React.FC<Props> = ({ articles, randomUsers }) => {
   return (
     <div>
       <Head>
@@ -27,7 +29,7 @@ const Home: React.FC<Props> = ({ articles }) => {
         <Feed />
 
         {/* Widgets */}
-        <Widgets articles={articles} />
+        <Widgets articles={articles} randomUsers={randomUsers} />
 
         {/* Modal */}
       </main>
@@ -42,9 +44,15 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
     "https://saurav.tech/NewsAPI/top-headlines/category/health/in.json"
   ).then((res) => res.json());
 
+  // Who to follow section
+  const randomUsersResults = await fetch(
+    "https://randomuser.me/api/?results=50&inc=name,login,picture"
+  ).then((res) => res.json());
+
   return {
     props: {
       articles: newsResults.articles,
+      randomUsers: randomUsersResults.results,
     },
   };
 };
