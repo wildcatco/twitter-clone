@@ -1,7 +1,7 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 import { Article } from "../types/article";
 import News from "./news";
-import { useState } from "react";
 
 interface Props {
   articles: Article[];

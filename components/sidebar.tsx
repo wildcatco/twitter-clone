@@ -1,16 +1,16 @@
-import Image from "next/image";
-import SidebarMenuItem from "./sidebar-menu-item";
 import { HomeIcon } from "@heroicons/react/20/solid";
 import {
-  HashtagIcon,
   BellIcon,
-  InboxIcon,
   BookmarkIcon,
   ClipboardIcon,
-  UserIcon,
   EllipsisHorizontalCircleIcon,
   EllipsisHorizontalIcon,
+  HashtagIcon,
+  InboxIcon,
+  UserIcon,
 } from "@heroicons/react/24/outline";
+import Image from "next/image";
+import SidebarMenuItem from "./sidebar-menu-item";
 
 const Sidebar = () => {
   return (

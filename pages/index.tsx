@@ -1,8 +1,8 @@
-import Head from "next/head";
-import Sidebar from "../components/sidebar";
-import Feed from "../components/feed";
-import Widgets from "../components/widgets";
 import { GetServerSideProps } from "next";
+import Head from "next/head";
+import Feed from "../components/feed";
+import Sidebar from "../components/sidebar";
+import Widgets from "../components/widgets";
 import { Article } from "../types/article";
 
 interface Props {
