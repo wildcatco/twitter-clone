@@ -45,7 +45,7 @@ const Sidebar = () => {
       {/* Mini profile */}
       <div className="hoverEffect text-gray-700 flex items-center justify-center xl:justify-start mt-auto">
         <Image
-          src="/images/temp_profile.jpg"
+          src="/images/dummy/profile.jpg"
           alt="user-image"
           width={40}
           height={40}

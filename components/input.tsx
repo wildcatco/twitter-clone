@@ -5,7 +5,7 @@ const Input = () => {
   return (
     <div className="flex border-b border-gray-200 p-3 space-x-3">
       <Image
-        src="/images/temp_profile.jpg"
+        src="/images/dummy/profile.jpg"
         alt="user-image"
         width={44}
         height={44}
