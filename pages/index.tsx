@@ -2,8 +2,14 @@ import Head from "next/head";
 import Sidebar from "../components/sidebar";
 import Feed from "../components/feed";
 import Widgets from "../components/widgets";
+import { GetServerSideProps } from "next";
+import { Article } from "../types/article";
 
-export default function Home() {
+interface Props {
+  articles: Article[];
+}
+
+const Home: React.FC<Props> = ({ articles }) => {
   return (
     <div>
       <Head>
@@ -21,10 +27,24 @@ export default function Home() {
         <Feed />
 
         {/* Widgets */}
-        <Widgets />
+        <Widgets articles={articles} />
 
         {/* Modal */}
       </main>
     </div>
   );
-}
+};
+
+export default Home;
+
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  const newsResults = await fetch(
+    "https://saurav.tech/NewsAPI/top-headlines/category/health/in.json"
+  ).then((res) => res.json());
+
+  return {
+    props: {
+      articles: newsResults.articles,
+    },
+  };
+};
