@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Sidebar from "../components/sidebar";
+import Feed from "../components/feed";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Sidebar />
 
         {/* Feed */}
+        <Feed />
 
         {/* Widgets */}
 
